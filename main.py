@@ -25,6 +25,7 @@ def main():
     payload = {"api_key": API, "year": "2025", "country": "RU"}
     url = "https://calendarific.com/api/v2/holidays"
     response = requests.get(url, params=payload)
+    response.raise_for_status()
     for holiday_data in response.json()["response"]["holidays"]:
         print(f"Дата: {holiday_data["date"]["datetime"]["month"]} {MONTHS[holiday_data["date"]["datetime"]["month"]]}")
         print(f"Название: {holiday_data["name"]}")
