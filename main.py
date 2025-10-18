@@ -22,7 +22,7 @@ months = {
 
 
 payload = {"api_key": API, "year": "2025", "country": "RU"}
-url = f"https://calendarific.com/api/v2/holidays?api_key={API}"
+url = f"https://calendarific.com/api/v2/holidays"
 response = requests.get(url, params=payload)
 data = response.json()
 for holiday in data["response"]["holidays"]:
